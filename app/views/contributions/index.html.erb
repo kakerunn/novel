@@ -1,0 +1,11 @@
+<h2>
+    <%= link_to 'Write' , new_contribution_path , class: 'header_menu' %>
+    小説一覧</h2>
+<ul>
+    <% @contributions.each do |contribution| %>
+    <li>
+        <%= link_to contribution.title , contribution_path(contribution) %> 
+        <%= link_to '[Edit]' , edit_contribution_path(contribution) , class: 'command' %>
+    </li>
+    <% end %>
+</ul>

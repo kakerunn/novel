@@ -1,0 +1,70 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+ 
+ .header {
+     background: white; 
+     margin-top: 20px; 
+     padding-right: 100px;
+ }
+ 
+ .container {
+     width: auto;
+     margin-right: 100px;
+     margin-left: 100px;
+ }
+ 
+ header {
+  margin: 0 , auto;
+ }
+ 
+ body {
+     margin: 0;
+     padding: 0;
+     font-family: 'Book Antiqua';
+     font-size: 14px;
+ }
+ 
+ h2 {
+     font-size: 25px;
+     padding-bottom: 10px;
+     margin-bottom: 20px;
+     border-bottom: 1px solid #ddd;
+ }
+ 
+ ul > li {
+     margin-bottom: 5px;
+ }
+ 
+ .book {
+     width: 375px;
+     height: 123px;
+ }
+ 
+ .header_menu {
+     font-size: 18px;
+     font-weight: normal;
+     float: right;
+ }
+ 
+ input[type="text"] , textarea {
+  box-sizing: border-box;
+  width: 1000px;
+  padding: 5px;
+ }
+
+ textarea {
+  font-family: 'Century Gothic';
+  height: 400px;
+ }
+ 
+ .error {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+  font-family: 'arial black';
+ }
+ 
+ .command {
+  font-size: 12px;
+  padding-left: 10px;
+ }
