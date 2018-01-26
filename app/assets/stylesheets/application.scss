@@ -1,38 +1,93 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
- 
- .header {
-     background: white; 
-     margin-top: 20px; 
-     padding-right: 100px;
+
+#header {
+ background: #333333;
+ color: #DDDDDD;
+ padding-top: 1px; 
+ height: 65px;
+}
+
+h1 {
+ float: left;
+ font-size: 25px;
+ margin-left: 100px;
+}
+
+h2 {
+     position:top;
+     font-size: 25px;
+     padding-bottom: 10px;
+     margin-bottom: 20px;
+     border-bottom: 1px solid #ddd;
  }
- 
+
+p1 {
+ float: right;
+ line-height: 65px;
+ margin-right: 500px;
+}
+
+p2 {
+ color: #DDDDDD;
+ margin-left: 20px;
+}
+
+#link {
+ margin: 20px;
+ padding-left: 100px;
+}
+
+#mainArea {
+ margin-top: 10px;
+  width: 1300px;
+ float: right;
+}
+
+#menuBar {
+ float: left;
+}
+
+#headerlink {
+ float: right;
+ margin-right: 100px;
+ margin-top: 20px;
+}
+
+
  .container {
      width: auto;
      margin-right: 100px;
-     margin-left: 100px;
+     margin-left: 50px;
  }
  
- header {
-  margin: 0 , auto;
+ #button {
+  display: inline-block;
+    padding: 1em 1em;
+    text-decoration: none;
+    background: #333333;/*ボタン色*/
+    color: #333333;/*ボタン色に同じ*/
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px #000000;
+    border-radius: 5px;/*角の丸み*/
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: -1px -1px rgba(255, 255, 255, 0.44), 2px 2px rgba(0, 0, 0, 0.38);
  }
+ 
+ #button:active{/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
  
  body {
      margin: 0;
      padding: 0;
      font-family: 'Book Antiqua';
      font-size: 14px;
- }
- 
- h2 {
-     font-size: 25px;
-     padding-bottom: 10px;
-     margin-bottom: 20px;
-     border-bottom: 1px solid #ddd;
- }
- 
- ul > li {
-     margin-bottom: 5px;
  }
  
  .book {
@@ -46,15 +101,23 @@
      float: right;
  }
  
- input[type="text"] , textarea {
+ @mixin contribution_sizing { 
   box-sizing: border-box;
   width: 1000px;
   padding: 5px;
  }
+ 
+ #contribution_title {
+  @include contribution_sizing;
+ }
+ 
+ #contribution_body {
+  @include contribution_sizing;
+ }
 
  textarea {
   font-family: 'Century Gothic';
-  height: 400px;
+  height: 380px;
  }
  
  .error {
@@ -68,3 +131,34 @@
   font-size: 12px;
   padding-left: 10px;
  }
+ 
+ @mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .form-group;
+  @extend .has-error;
+  margin-bottom: 0;
+}
+

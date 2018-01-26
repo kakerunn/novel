@@ -10,22 +10,50 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
+  
   <body>
-    <header class="header">
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",    '#' %></li>
-            <li><%= link_to "Help",    '#' %></li>
-            <li><%= link_to "Sign in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="container">
-        <%= link_to image_tag('book.png' , class: 'book') , root_path %>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
+    <div id="header">
+      <h1>フリー小説投稿サイト-Novels-</h1>
+      <p1>こちらでは、無料で小説の投稿や小説が読めちゃう！！</p1>
     </div>
-  </body>
+    
+     <div id="mainArea">
+       <div id="headerlink">
+         <nav>
+           <% if user_signed_in? %>
+              <strong><%= "-ようこそ、" + current_user.name + "さん-"  %></strong>
+                <%= link_to 'プロフィール変更' , edit_user_registration_path , id: 'link' %>
+                <%= link_to 'ログアウト' , destroy_user_session_path ,  method: :delete %>
+            <% else %>
+               <strong><%= "-ようこそ、ゲストさん-"  %></strong>
+                <%= link_to 'サインアップ' , new_user_registration_path , id: 'link' %>
+                <%= link_to 'ログイン' , new_user_session_path  %>
+            <% end %>
+         </nav>
+       </div>
+       
+       <div class="container">
+         <%= link_to image_tag('book.png' , class: 'book') , root_path %>
+       </div>
+       <div class="container">
+        <%= yield %>
+       </div>
+     </div>
+     
+     <div id="menuBar">
+      <ul>
+        <div id="button">
+          <p2>ジャンル</p2>
+          <%= button_to 'ファンタジー' , '#' %>
+          <%= button_to '      バトル      ' , '#' %>
+          <%= button_to '　　 S F 　　' , '#' %>
+          <%= button_to '      ホラー      ' , '#' %>
+          <%= button_to '  ミステリー  ' , '#' %>
+          <%= button_to '       恋  愛       ' , '#' %>
+          <%= button_to '      その他      ' , '#' %>
+        </div>
+      </ul>
+     </div>
+
+ </body>
 </html>

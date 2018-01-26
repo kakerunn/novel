@@ -1,0 +1,17 @@
+<%= form_for @contribution do |f| %>
+    <p>
+        <%= f.text_field :title , placeholder: '小説タイトル' %>
+        <% if @contribution.errors.messages[:title].any? %>
+        <span class="error"><%= @contribution.errors.messages[:title][0] %></span>
+        <% end %>
+    </p>
+    <p>
+        <%= f.text_area :body , placeholder: '小説本文'  %>
+        <% if @contribution.errors.messages[:body].any? %>
+        <span class="error"><%= @contribution.errors.messages[:body][0] %></span>
+        <% end %>
+    </p>
+    <p>
+        <%= f.submit(['Write']) %>
+    </p>
+  <% end %>

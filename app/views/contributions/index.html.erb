@@ -6,6 +6,12 @@
     <li>
         <%= link_to contribution.title , contribution_path(contribution) %> 
         <%= link_to '[Edit]' , edit_contribution_path(contribution) , class: 'command' %>
+        <%= link_to '[Delete]' , 
+        contribution_path(contribution) ,
+        method: :delete ,
+        class: 'command' , 
+        data: { confirm: 'Sure?' } %>
     </li>
     <% end %>
 </ul>
+
